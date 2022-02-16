@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
+    //imagenes
     let imagenes = [
         {   img:"images/arceus.jpg",
             name:"arceus"
@@ -37,4 +38,19 @@ document.addEventListener("DOMContentLoaded", function(){
             name:"squirtle"
         }        
     ]
+
+    //tablero html
+    let tablero = document.querySelector(".tablero");
+    
+    //funcion para colocar las imagenes en el html
+    function crearTablero(){
+        for(let i=0; i<imagenes.length; i++){
+            var img = document.createElement("img");
+            img.setAttribute("data-id",i);
+            img.setAttribute("src","images/oculta.jpg");
+            img.setAttribute("width","200px");
+            tablero.appendChild(img);
+        }
+    }
+    crearTablero();
 });
