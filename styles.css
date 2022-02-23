@@ -4,3 +4,8 @@
     width: 800px;
     height: 600px;
 }
+.pokebola{
+    height: 200px;        
+    align-self: center;
+    /* pointer-events: none; */
+}
