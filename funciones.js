@@ -70,7 +70,8 @@ document.addEventListener("DOMContentLoaded", function(){
         let imgclick = this.getAttribute("data-id");
         imgelegida.push(imagenes[imgclick].name);
         imgelegidaid.push(imgclick);
-        this.setAttribute("src",imagenes[imgclick].img);                
+        this.setAttribute("src",imagenes[imgclick].img);   
+        this.setAttribute("class","seleccionado")             
         if(imgelegida.length === 2){
             setTimeout(compararImagenes,300);
         }        
@@ -93,15 +94,18 @@ document.addEventListener("DOMContentLoaded", function(){
         else{
             alert("El Pókemon salvaje ha escapado");            
             todaslasimg[opcion1].setAttribute("src","images/oculta.jpg");
-            todaslasimg[opcion2].setAttribute("src","images/oculta.jpg");
+            todaslasimg[opcion2].setAttribute("src","images/oculta.jpg");            
+            todaslasimg[opcion1].setAttribute("class","noseleccionado");
+            todaslasimg[opcion2].setAttribute("class","noseleccionado");            
         }
         imgelegida = [];
         imgelegidaid = [];
         aciertos.textContent = conteo.length;
 
-        if(conteo.length === 2){
+        if(conteo.length === 6){
             aciertos.textContent = "Has atrapado a todos los Pókemon salvaje";
-            crearTablero();
+            alert("Has atrapado a todos los Pókemon salvaje")
+            location.reload(true);
         }
     }
 
